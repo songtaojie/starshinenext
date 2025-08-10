@@ -5,11 +5,11 @@
     <parent>
         <groupId>com.starshine</groupId>
         <artifactId>starshine</artifactId>
-        <version>1.0.0</version>
+        <version>0.0.1-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <artifactId>starshine-core</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>starshine-core</name>
     <description>starshine-core</description>
     <url/>
