@@ -80,8 +80,10 @@
     </dependencyManagement>
 
     <modules>
-        <module>starshine-core</module>
+        <module>starshine-common</module>
         <module>starshine-pojo</module>
+        <module>starshine-domain</module>
+        <module>starshine-application</module>
     </modules>
     <packaging>pom</packaging>
     <dependencies>

@@ -6,8 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="starshine-core" />
+        <module name="starshine-application" />
         <module name="starshine-pojo" />
+        <module name="starshine-domain" />
+        <module name="starshine-common" />
       </profile>
     </annotationProcessing>
   </component>
