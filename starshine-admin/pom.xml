@@ -5,20 +5,12 @@
 	<parent>
 		<groupId>com.starshine</groupId>
 		<artifactId>starshine</artifactId>
-		<version>1.0.0</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath/>
 	</parent>
 	<artifactId>starshine-admin</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>starshine-admin</name>
 	<description>starshine-admin</description>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -29,6 +21,18 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.starshine</groupId>
+			<artifactId>starshine-infrastructure</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.starshine</groupId>
+			<artifactId>starshine-application</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 

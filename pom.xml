@@ -81,7 +81,7 @@
 
     <modules>
         <module>starshine-common</module>
-        <module>starshine-pojo</module>
+        <module>starshine-infrastructure</module>
         <module>starshine-domain</module>
         <module>starshine-application</module>
     </modules>
@@ -91,6 +91,18 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.starshine</groupId>
+            <artifactId>starshine-domain</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-core</artifactId>
+            <version>3.5.12</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
     <build>

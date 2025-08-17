@@ -10,7 +10,13 @@
     </parent>
 
     <artifactId>starshine-domain</artifactId>
-
+    <dependencies>
+        <dependency>
+            <groupId>com.starshine</groupId>
+            <artifactId>starshine-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>

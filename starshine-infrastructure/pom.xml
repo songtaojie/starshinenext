@@ -9,8 +9,23 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>starshine-pojo</artifactId>
-
+    <artifactId>starshine-infrastructure</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.starshine</groupId>
+            <artifactId>starshine-domain</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+            <version>3.5.12</version>
+        </dependency>
+    </dependencies>
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
