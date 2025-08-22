@@ -1,14 +1,17 @@
 package com.starshine.domain;
 
+import com.starshine.common.entities.auditing.FullAuditedAggregateRoot;
+import com.starshine.interfaces.IUser;
 import lombok.Data;
 import java.time.OffsetDateTime;
+import java.util.Map;
 
 /**
  * 系统用户
  * @author starshine
  */
 @Data
-public class SysUser extends EntityBaseTenantOrg {
+public class SysUser extends FullAuditedAggregateRoot implements IUser {
     /**
      * 用户名
      */
@@ -128,4 +131,14 @@ public class SysUser extends EntityBaseTenantOrg {
      * 用户类型
      */
     private String userType;
+
+    /**
+     * 扩展信息
+     */
+    private Map<String, String> extraInfo;
+
+    /**
+     * 租户id
+     */
+    private Long tenantId;
 }

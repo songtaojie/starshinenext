@@ -7,7 +7,7 @@ import lombok.Data;
  * @author starshine
  */
 @Data
-public class SysTenantConnectionString extends EntityBaseTenantId{
+public class SysTenantConnectionString extends EntityBaseId {
 
     /**
      * 连接字符串名称
