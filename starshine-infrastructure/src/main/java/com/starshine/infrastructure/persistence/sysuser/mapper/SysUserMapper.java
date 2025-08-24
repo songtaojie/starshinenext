@@ -1,4 +1,4 @@
-package com.starshine.infrastructure.mapper;
+package com.starshine.infrastructure.persistence.sysuser.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.starshine.domain.SysUser;

@@ -6,5 +6,5 @@ package com.starshine.common.entities;
  * @version 1.0
  * @since 2025-08-17 下午 18:44 周日
  */
-public abstract class BasicAggregateRoot extends Entity implements IAggregateRoot{
+public abstract class BasicAggregateRoot extends Entity implements IAggregateRoot {
 }

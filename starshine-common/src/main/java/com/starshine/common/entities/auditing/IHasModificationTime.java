@@ -13,5 +13,5 @@ public interface IHasModificationTime {
      * 获取修改时间。
      * @return 修改时间
      */
-    Instant getModificationTime();
+    Instant getLastModificationTime();
 }

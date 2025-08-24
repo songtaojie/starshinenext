@@ -12,5 +12,5 @@ public interface IEntity
      * 获取实体的主键。
      * @return 返回此实体的有序键数组。
      */
-    Object[] GetKeys();
+    Object[] getKeys();
 }

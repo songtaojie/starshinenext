@@ -6,10 +6,10 @@ package com.starshine.common.entities.auditing;
  * @version 1.0
  * @since 2025-08-17 上午 10:33 周日
  */
-public interface ICreationAuditedWith<TCreator> extends ICreationAudited {
+public interface ICreationAuditedWithUser<TUser,TKey> extends ICreationAuditedWithKey<TKey> {
     /**
-     * 创建者ID
-     * @return 创建者ID
+     * 获取创建者
+     * @return 创建者
      */
-    TCreator getCreator();
+    TUser getCreator();
 }

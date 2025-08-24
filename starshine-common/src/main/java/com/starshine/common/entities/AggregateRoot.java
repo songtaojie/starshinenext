@@ -10,5 +10,8 @@ import java.util.Map;
  */
 @Data
 public abstract class AggregateRoot extends BasicAggregateRoot implements IHasExtraInfo {
+    /**
+     * 额外的信息
+     */
     private Map<String, String> extraInfo;
 }

@@ -27,7 +27,7 @@ public abstract class EntityWithKey<TKey> extends Entity implements IEntityWithK
     }
 
     @Override
-    protected Object[] getKeys() {
+    public Object[] getKeys() {
         return new Object[]{ id };
     }
 }

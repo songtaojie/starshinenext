@@ -6,5 +6,5 @@ package com.starshine.common.entities.auditing;
  * @version 1.0
  * @since 2025-08-17 上午 11:19 周日
  */
-public interface IFullAudited extends IAudited, IDeletionAudited {
+public interface IFullAudited extends IFullAuditedWithKey<Long> {
 }

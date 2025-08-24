@@ -13,5 +13,5 @@ public interface ISoftDelete {
      * 获取实体是否被删除
      * @return 实体是否被删除
      */
-    boolean getDeleted();
+    boolean isDeleted();
 }

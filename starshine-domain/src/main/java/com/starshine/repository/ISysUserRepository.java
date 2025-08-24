@@ -16,4 +16,12 @@ public interface ISysUserRepository {
      */
     @Nullable
     SysUser findById(Long id);
+
+    /**
+     * 根据用户名查询用户
+     * @param username
+     * @return
+     */
+    @Nullable
+    SysUser findByUsername(String username);
 }

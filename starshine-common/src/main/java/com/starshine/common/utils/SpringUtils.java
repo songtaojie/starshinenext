@@ -25,6 +25,16 @@ public class SpringUtils implements BeanFactoryPostProcessor, ApplicationContext
         return (T) beanFactory.getBean(name);
     }
 
+    /**
+     * 获取对象
+     * @author songtaojie
+     * @version 1.0
+     * @since 2025-08-23 下午 周六
+     */
+    public static <T> T getBean(Class<?> clazz) throws BeansException {
+        return (T) beanFactory.getBean(clazz);
+    }
+
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
         SpringUtils.beanFactory = beanFactory;

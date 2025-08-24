@@ -6,7 +6,7 @@ package com.starshine.common.entities.auditing;
  * @version 1.0
  * @since 2025-08-17 上午 10:59 周日
  */
-public interface IDeletionAuditedWith<TUser> extends IDeletionAudited{
+public interface IDeletionAuditedWithUser<TUser, TKey> extends IDeletionAuditedWithKey<TKey> {
     /**
      * 删除者
      * @return 删除者

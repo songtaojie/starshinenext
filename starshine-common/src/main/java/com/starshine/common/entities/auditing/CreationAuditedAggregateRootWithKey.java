@@ -10,11 +10,11 @@ import java.time.Instant;
  * @param <TKey>
  */
 @Data
-public abstract class CreationAuditedAggregateRootWithKey<TKey> extends AggregateRootWithKey<TKey> implements ICreationAudited {
+public abstract class CreationAuditedAggregateRootWithKey<TKey> extends AggregateRootWithKey<TKey> implements ICreationAuditedWithKey<TKey> {
     /**
      * 创建者Id
      */
-    private  TKey creatorId;
+    private TKey creatorId;
 
     /**
      * 创建时间

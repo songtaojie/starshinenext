@@ -9,7 +9,7 @@ import java.time.Instant;
  * @param <TKey>
  */
 @Data
-public abstract class AuditedAggregateRootWithKey<TKey> extends CreationAuditedAggregateRootWithKey<TKey> implements IAuditedWith<TKey>{
+public abstract class AuditedAggregateRootWithKey<TKey> extends CreationAuditedAggregateRootWithKey<TKey> implements IAuditedWithKey<TKey> {
     /**
      * 最后修改者Id
      */

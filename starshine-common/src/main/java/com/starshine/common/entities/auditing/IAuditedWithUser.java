@@ -6,5 +6,5 @@ package com.starshine.common.entities.auditing;
  * @version 1.0
  * @since 2025-08-17 上午 10:24 周日
  */
-public interface IAuditedWith<TUser> extends ICreationAuditedWith<TUser>, IModificationAuditedWith<TUser>  {
+public interface IAuditedWithUser<TUser, TKey> extends ICreationAuditedWithUser<TUser, TKey>, IModificationAuditedWithUser<TUser, TKey> {
 }

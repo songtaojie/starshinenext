@@ -1,8 +1,11 @@
 package com.starshine.domain;
 
 import com.starshine.common.entities.auditing.FullAuditedAggregateRoot;
+import com.starshine.common.entities.auditing.FullAuditedAggregateRootWithKey;
 import com.starshine.interfaces.IUser;
 import lombok.Data;
+
+import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.util.Map;
 
@@ -11,7 +14,7 @@ import java.util.Map;
  * @author starshine
  */
 @Data
-public class SysUser extends FullAuditedAggregateRoot implements IUser {
+public class SysUser extends FullAuditedAggregateRootWithKey<Long> implements IUser {
     /**
      * 用户名
      */
@@ -75,7 +78,7 @@ public class SysUser extends FullAuditedAggregateRoot implements IUser {
      * 状态
      * 0=正常,1=停用
      */
-    private int status;
+    private String status;
 
     /**
      * 锁定
@@ -85,7 +88,7 @@ public class SysUser extends FullAuditedAggregateRoot implements IUser {
     /**
      * 锁定到期时间
      */
-    private OffsetDateTime lockoutEnd;
+    private Instant lockoutEnd;
 
     /**
      * 访问失败次数
@@ -100,7 +103,7 @@ public class SysUser extends FullAuditedAggregateRoot implements IUser {
     /**
      * 最后一次密码更改时间
      */
-    private OffsetDateTime lastPasswordChangeTime;
+    private Instant lastPasswordChangeTime;
 
     /**
      * 最后一次登录ip
@@ -115,7 +118,7 @@ public class SysUser extends FullAuditedAggregateRoot implements IUser {
     /**
      * 最后一次登录时间
      */
-    private OffsetDateTime lastLoginTime;
+    private Instant lastLoginTime;
 
     /**
      * 最后一次登录设备

@@ -19,5 +19,5 @@ public abstract class Entity implements IEntity, Serializable {
                         .map(Object::toString).toArray(String[]::new)));
     }
 
-    protected abstract Object[] getKeys();
+    public abstract Object[] getKeys();
 }
