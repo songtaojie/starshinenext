@@ -1,4 +1,4 @@
-package com.starshine.domain;
+package com.starshine.domain.model.tenant;
 
 import com.starshine.common.entities.Entity;
 import com.starshine.common.entities.IMultiTenant;

@@ -1,9 +1,9 @@
 package com.starshine.infrastructure.security;
 
 import com.starshine.common.exception.ServiceException;
-import com.starshine.domain.sysuser.SysUser;
+import com.starshine.domain.model.user.SysUser;
 import com.starshine.domain.enums.UserStatus;
-import com.starshine.repository.ISysUserRepository;
+import com.starshine.domain.repository.ISysUserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UserDetails;

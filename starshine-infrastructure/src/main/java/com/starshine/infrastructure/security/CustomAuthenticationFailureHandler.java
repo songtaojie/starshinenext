@@ -3,7 +3,7 @@ package com.starshine.infrastructure.security;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.starshine.common.utils.StringUtils;
 import com.starshine.common.web.RESTfulResult;
-import com.starshine.repository.ISysUserRepository;
+import com.starshine.domain.repository.ISysUserRepository;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

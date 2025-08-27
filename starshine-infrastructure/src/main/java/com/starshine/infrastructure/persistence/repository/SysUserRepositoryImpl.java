@@ -1,9 +1,9 @@
-package com.starshine.infrastructure.persistence.sysuser;
+package com.starshine.infrastructure.persistence.repository;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.starshine.domain.sysuser.SysUser;
-import com.starshine.infrastructure.persistence.sysuser.mapper.SysUserMapper;
-import com.starshine.repository.ISysUserRepository;
+import com.starshine.domain.model.user.SysUser;
+import com.starshine.infrastructure.persistence.mapper.SysUserMapper;
+import com.starshine.domain.repository.ISysUserRepository;
 import org.springframework.stereotype.Repository;
 
 /**

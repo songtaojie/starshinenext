@@ -1,7 +1,7 @@
 package com.starshine.service;
 
-import com.starshine.domain.sysuser.SysUser;
-import com.starshine.repository.ISysUserRepository;
+import com.starshine.domain.model.user.SysUser;
+import com.starshine.domain.repository.ISysUserRepository;
 import org.springframework.stereotype.Service;
 
 /**

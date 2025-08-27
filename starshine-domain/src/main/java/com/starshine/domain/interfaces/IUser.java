@@ -1,4 +1,4 @@
-package com.starshine.interfaces;
+package com.starshine.domain.interfaces;
 
 import com.starshine.common.data.IHasExtraInfo;
 import com.starshine.common.entities.IAggregateRoot;

@@ -1,8 +1,10 @@
-package com.starshine.domain.model.user;
+package com.starshine.infrastructure.persistence.po;
 
-import com.starshine.common.entities.auditing.FullAuditedAggregateRootWithKey;
-import com.starshine.domain.interfaces.IUser;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.handlers.Fastjson2TypeHandler;
 import lombok.Data;
+import org.springframework.lang.Nullable;
 
 import java.time.Instant;
 import java.util.Map;
@@ -12,7 +14,14 @@ import java.util.Map;
  * @author starshine
  */
 @Data
-public class SysUser extends FullAuditedAggregateRootWithKey<Long> implements IUser {
+@TableName("sys_user")
+public class SysUserPO {
+
+    /**
+     * 主键
+     */
+    protected Long id;
+
     /**
      * 用户名
      */
@@ -35,7 +44,17 @@ public class SysUser extends FullAuditedAggregateRootWithKey<Long> implements IU
     /**
      * 电子邮箱
      */
-    private Email email;
+    private String email;
+
+    /**
+     * 此用户的规范化电子邮箱。
+     */
+    private String normalizedEmail;
+
+    /**
+     * 电子邮箱已确认
+     */
+    private boolean emailConfirmed;
 
     /**
      * 密码哈希
@@ -55,7 +74,12 @@ public class SysUser extends FullAuditedAggregateRootWithKey<Long> implements IU
     /**
      * 手机号码
      */
-    private PhoneNumber phoneNumber;
+    private String phoneNumber;
+
+    /**
+     * 手机号码已确认
+     */
+    private boolean phoneNumberConfirmed;
 
     /**
      * 状态
@@ -121,10 +145,47 @@ public class SysUser extends FullAuditedAggregateRootWithKey<Long> implements IU
     /**
      * 扩展信息
      */
+    @Nullable
+    @TableField(typeHandler = Fastjson2TypeHandler.class)
     private Map<String, String> extraInfo;
 
     /**
      * 租户id
      */
     private Long tenantId;
+
+    /**
+     * 删除者
+     */
+    private Long deleterId;
+
+    /**
+     * 是否删除
+     */
+    private boolean deleted;
+
+    /**
+     * 删除时间
+     */
+    private Instant deletionTime;
+
+    /**
+     * 最后修改者Id
+     */
+    private Long lastModifierId;
+
+    /**
+     * 最后修改时间
+     */
+    private Instant lastModificationTime;
+
+    /**
+     * 创建者Id
+     */
+    private Long creatorId;
+
+    /**
+     * 创建时间
+     */
+    private Instant creationTime;
 }

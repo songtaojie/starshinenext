@@ -1,4 +1,4 @@
-package com.starshine.domain;
+package com.starshine.domain.model.role;
 
 /**
  * @author starshine
