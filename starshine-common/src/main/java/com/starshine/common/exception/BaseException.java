@@ -1,5 +1,6 @@
 package com.starshine.common.exception;
 
+import com.starshine.common.utils.MessageUtils;
 import com.starshine.common.utils.StringUtils;
 
 /**
@@ -47,10 +48,15 @@ public class BaseException extends RuntimeException {
         this(null, defaultMessage);
     }
 
+    @Override
     public String getMessage(){
         String message = null;
-        if(StringUtils.isEmpty(code)){
-
+        if(!StringUtils.isEmpty(code)){
+            message = MessageUtils.message(code, args);
         }
+        if(message == null){
+            message = defaultMessage;
+        }
+        return message;
     }
 }

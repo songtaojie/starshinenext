@@ -1,6 +1,6 @@
 package com.starshine.repository;
 
-import com.starshine.domain.SysUser;
+import com.starshine.domain.sysuser.SysUser;
 import org.springframework.lang.Nullable;
 
 /**
@@ -24,4 +24,25 @@ public interface ISysUserRepository {
      */
     @Nullable
     SysUser findByUsername(String username);
+
+    /**
+     * 更新用户基础信息
+     * @param sysUser
+     * @return
+     */
+    int updateUserProfile(SysUser sysUser);
+
+    /**
+     * 锁定用户
+     * @param sysUser
+     * @return
+     */
+    int lock(SysUser sysUser);
+
+    /**
+     * 解锁用户
+     * @param sysUser
+     * @return
+     */
+    int unLock(SysUser sysUser);
 }

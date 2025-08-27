@@ -1,7 +1,7 @@
 package com.starshine.infrastructure.persistence.sysuser;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.starshine.domain.SysUser;
+import com.starshine.domain.sysuser.SysUser;
 import com.starshine.infrastructure.persistence.sysuser.mapper.SysUserMapper;
 import com.starshine.repository.ISysUserRepository;
 import org.springframework.stereotype.Repository;
@@ -44,6 +44,32 @@ public class SysUserRepositoryImpl implements ISysUserRepository {
         return sysUserMapper.selectOne(
                 Wrappers.<SysUser>lambdaQuery()
                         .eq(SysUser::getUsername, username)
+        );
+    }
+
+    /**
+     * 更新用户信息
+     * @param sysUser
+     * @return
+     */
+    @Override
+    public int updateUserProfile(SysUser sysUser) {
+        return sysUserMapper.updateById(sysUser);
+    }
+
+    @Override
+    public int lock(SysUser sysUser) {
+        return sysUserMapper.update(sysUser, Wrappers.<SysUser>lambdaUpdate()
+                .eq(SysUser::getId, sysUser.getId())
+                .set(SysUser::getAccessFailedCount, sysUser.getAccessFailedCount())
+                );
+    }
+
+    @Override
+    public int unLock(SysUser sysUser) {
+        return sysUserMapper.update(sysUser, Wrappers.<SysUser>lambdaUpdate()
+                .eq(SysUser::getId, sysUser.getId())
+                .set(SysUser::getAccessFailedCount, sysUser.getAccessFailedCount())
         );
     }
 }

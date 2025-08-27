@@ -7,7 +7,9 @@ import lombok.Data;
 
 /**
  * 租户连接字符串
- * @author starshine
+ * @author songtaojie
+ * @version 1.0
+ * @since 2025-08-26 下午 周二
  */
 @Data
 @AllArgsConstructor

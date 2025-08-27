@@ -1,0 +1,4 @@
+mybatis-plus:
+  configuration:
+    # 开启驼峰命名
+    map-underscore-to-camel-case: true

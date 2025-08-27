@@ -2,7 +2,7 @@ package com.starshine.domain;
 
 import com.starshine.common.entities.BasicAggregateRootWithKey;
 import lombok.Data;
-
+import  com.starshine.common.constant.CommonConstants;
 import java.util.List;
 
 /**
@@ -31,9 +31,9 @@ public class Tenant extends BasicAggregateRootWithKey<Long> {
      * 获取默认连接字符串
      * @return
      */
-    public String FindDefaultConnectionString()
+    public String findDefaultConnectionString()
     {
-        return FindConnectionString("Default");
+        return findConnectionString(CommonConstants.DEFAULT_TENANT_NAME);
     }
 
     /**
@@ -41,7 +41,7 @@ public class Tenant extends BasicAggregateRootWithKey<Long> {
      * @param name
      * @return
      */
-    public String FindConnectionString(String name)
+    public String findConnectionString(String name)
     {
         return connectionStrings.stream()
                 .filter(x -> x.getName().equals(name))
@@ -54,9 +54,9 @@ public class Tenant extends BasicAggregateRootWithKey<Long> {
      * 设置默认连接字符串
      * @param connectionString
      */
-    public void SetDefaultConnectionString(String connectionString)
+    public void setDefaultConnectionString(String connectionString)
     {
-        SetConnectionString("Default", connectionString);
+        setConnectionString(CommonConstants.DEFAULT_TENANT_NAME, connectionString);
     }
 
     /**
@@ -64,7 +64,7 @@ public class Tenant extends BasicAggregateRootWithKey<Long> {
      * @param name
      * @param connectionString
      */
-    public void SetConnectionString(String name, String connectionString)
+    public void setConnectionString(String name, String connectionString)
     {
         TenantConnectionString tenantConnectionString = connectionStrings.stream()
                 .filter(x -> x.getName().equals(name))
@@ -82,18 +82,17 @@ public class Tenant extends BasicAggregateRootWithKey<Long> {
 
     /**
      * 移除连接字符串
-     * @param name
      */
-    public void RemoveDefaultConnectionString()
+    public void removeDefaultConnectionString()
     {
-        RemoveConnectionString("Default");
+        removeConnectionString("Default");
     }
 
     /**
      * 移除连接字符串
      * @param name
      */
-    public void RemoveConnectionString(String name)
+    public void removeConnectionString(String name)
     {
         TenantConnectionString tenantConnectionString = connectionStrings.stream()
                 .filter(x -> x.getName().equals(name))

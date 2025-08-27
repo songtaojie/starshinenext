@@ -1,14 +1,13 @@
 package com.starshine.infrastructure.security;
 
 import com.starshine.common.exception.ServiceException;
-import com.starshine.domain.SysUser;
-import com.starshine.enums.UserStatus;
+import com.starshine.domain.sysuser.SysUser;
+import com.starshine.domain.enums.UserStatus;
 import com.starshine.repository.ISysUserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 /**

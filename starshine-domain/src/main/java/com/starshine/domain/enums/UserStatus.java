@@ -1,4 +1,4 @@
-package com.starshine.enums;
+package com.starshine.domain.enums;
 
 import lombok.Data;
 

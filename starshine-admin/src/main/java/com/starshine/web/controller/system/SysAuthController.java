@@ -1,10 +1,11 @@
 package com.starshine.web.controller.system;
 
 import com.starshine.common.web.RESTfulResult;
-import com.starshine.service.ISysUserService;
-import com.starshine.service.models.LoginRequest;
+import com.starshine.models.LoginRequest;
+import com.starshine.service.SysUserService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -14,15 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2025-08-23 下午 周六
  */
 @RestController
+@RequestMapping("/api/auth")
 public class SysAuthController {
-    private final ISysUserService sysUserService;
-    public SysAuthController(ISysUserService sysUserService) {
+    private final SysUserService sysUserService;
+    public SysAuthController(SysUserService sysUserService) {
         this.sysUserService = sysUserService;
     }
 
     @PostMapping("/login")
     public RESTfulResult login(@RequestBody LoginRequest loginRequest) {
-        SysUser sysUser = sysUserService.findById(1L);
+        SysUser sysUser = sysUserService.findByUsername(loginRequest.username());
     }
 }
 

@@ -1,12 +1,10 @@
-package com.starshine.domain;
+package com.starshine.domain.sysuser;
 
-import com.starshine.common.entities.auditing.FullAuditedAggregateRoot;
 import com.starshine.common.entities.auditing.FullAuditedAggregateRootWithKey;
 import com.starshine.interfaces.IUser;
 import lombok.Data;
 
 import java.time.Instant;
-import java.time.OffsetDateTime;
 import java.util.Map;
 
 /**
@@ -32,7 +30,7 @@ public class SysUser extends FullAuditedAggregateRootWithKey<Long> implements IU
     /**
      * 姓名
      */
-    private  String name;
+    private String name;
 
     /**
      * 电子邮箱
