@@ -1,4 +1,4 @@
-package com.starshine.domain.sysuser.valueobject;
+package com.starshine.domain.model.sysuser;
 
 import com.starshine.common.utils.StringUtils;
 import lombok.AccessLevel;

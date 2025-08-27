@@ -1,6 +1,6 @@
 package com.starshine.repository;
 
-import com.starshine.domain.sysuser.SysUser;
+import com.starshine.domain.model.user.SysUser;
 import org.springframework.lang.Nullable;
 
 /**

@@ -1,4 +1,4 @@
-package com.starshine.domain.sysuser;
+package com.starshine.domain.model.sysuser;
 
 import com.starshine.common.entities.auditing.FullAuditedAggregateRootWithKey;
 import com.starshine.interfaces.IUser;
