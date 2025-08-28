@@ -1,8 +1,8 @@
 DROP TABLE IF EXISTS public.sys_user;
 CREATE TABLE public.sys_user (
    id BIGINT NOT NULL PRIMARY KEY,
-   username VARCHAR(255) DEFAULT NOT NULL,
-   normalized_username VARCHAR(255) DEFAULT NOT NULL,
+   username VARCHAR(255) NOT NULL,
+   normalized_username VARCHAR(255) NOT NULL,
    password VARCHAR(255) DEFAULT NULL,
    name VARCHAR(255) DEFAULT NULL,
    email VARCHAR(255) DEFAULT NULL,

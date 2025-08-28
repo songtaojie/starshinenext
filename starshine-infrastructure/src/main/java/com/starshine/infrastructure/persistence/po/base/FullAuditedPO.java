@@ -2,6 +2,7 @@ package com.starshine.infrastructure.persistence.po.base;
 
 import com.starshine.common.entities.auditing.IFullAuditedWithKey;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.time.Instant;
 /**
@@ -11,6 +12,7 @@ import java.time.Instant;
  * @since 2025-08-28 下午 周四
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 public abstract class FullAuditedPO extends AuditedPO implements IFullAuditedWithKey<Long> {
     /**
      * 删除者

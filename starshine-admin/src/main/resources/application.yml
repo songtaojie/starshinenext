@@ -5,6 +5,6 @@ mybatis-plus:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/starshine_admin
+    url: jdbc:postgresql://localhost:5432/starshine_next_admin
     username: postgres
     password: stj123456
