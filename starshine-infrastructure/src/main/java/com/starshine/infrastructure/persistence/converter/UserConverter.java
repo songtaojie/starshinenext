@@ -8,15 +8,13 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 import org.mapstruct.Named;
-import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface UserConverter {
-    UserConverter INSTANCE = Mappers.getMapper(UserConverter.class);
 
     @Mappings({
-        @Mapping(target = "email", qualifiedByName = "toEmail"),
-        @Mapping(target = "phoneNumber", qualifiedByName = "toPhoneNumber")
+        @Mapping(target = "email",source = ".", qualifiedByName = "toEmail"),
+        @Mapping(target = "phoneNumber",source = ".", qualifiedByName = "toPhoneNumber")
     })
     SysUser toDomain(SysUserPO po);
 
@@ -44,7 +42,7 @@ public interface UserConverter {
             @Mapping(source = "email.address", target = "email"),
             @Mapping(source = "email.confirmed", target = "emailConfirmed"),
             @Mapping(source = "phoneNumber.number", target = "phoneNumber"),
-            @Mapping(source = "phoneNumber.confirmed", target = "phoneConfirmed"),
+            @Mapping(source = "phoneNumber.confirmed", target = "phoneNumberConfirmed"),
     })
     SysUserPO toPO(SysUser domain);
 }

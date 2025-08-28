@@ -24,7 +24,7 @@ public class SysAuthController {
 
     @PostMapping("/login")
     public RESTfulResult login(@RequestBody LoginRequest loginRequest) {
-        SysUser sysUser = sysUserService.findByUsername(loginRequest.username());
+        return RESTfulResult.ok("登录成功", sysUserService.findByUsername(loginRequest.username()));
     }
 }
 

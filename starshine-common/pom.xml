@@ -6,11 +6,11 @@
         <groupId>com.starshine</groupId>
         <artifactId>starshine</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
+<!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
     </parent>
     <artifactId>starshine-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>starshine-core</name>
+    <name>starshine-common</name>
     <description>starshine核心包</description>
 
     <dependencies>

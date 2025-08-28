@@ -2,3 +2,9 @@ mybatis-plus:
   configuration:
     # 开启驼峰命名
     map-underscore-to-camel-case: true
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/starshine_admin
+    username: postgres
+    password: stj123456

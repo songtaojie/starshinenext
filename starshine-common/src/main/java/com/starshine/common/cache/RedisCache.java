@@ -1,6 +1,8 @@
 package com.starshine.common.cache;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
@@ -16,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class RedisCache {
     private final RedisTemplate redisTemplate;
 
-    public RedisCache(RedisTemplate redisTemplate) {
+    public RedisCache(StringRedisTemplate redisTemplate) {
 
         this.redisTemplate = redisTemplate;
     }
