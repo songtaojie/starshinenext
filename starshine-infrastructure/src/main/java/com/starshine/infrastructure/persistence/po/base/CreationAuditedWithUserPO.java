@@ -1,0 +1,18 @@
+package com.starshine.infrastructure.persistence.po.base;
+
+import com.starshine.common.entities.auditing.ICreationAuditedWithUser;
+import lombok.Data;
+
+/**
+ * 创建审计实体
+ * @author songtaojie
+ * @version 1.0
+ * @since 2025-08-28 下午 周四
+ */
+@Data
+public abstract class CreationAuditedWithUserPO extends CreationAuditedPO implements ICreationAuditedWithUser<String,Long> {
+    /**
+     * 创建者
+     */
+    private String creator;
+}

@@ -28,7 +28,7 @@ public class SysAuthService {
         catch (Exception e)
         {
             if(e instanceof BadCredentialsException) {
-                throw new UserPa
+                throw e;
             }
         }
         finally {

@@ -3,7 +3,9 @@ package com.starshine.infrastructure.persistence.po;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.handlers.Fastjson2TypeHandler;
+import com.starshine.infrastructure.persistence.po.base.FullAuditedPO;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.springframework.lang.Nullable;
 
 import java.time.Instant;
@@ -15,7 +17,8 @@ import java.util.Map;
  */
 @Data
 @TableName("sys_user")
-public class SysUserPO {
+@EqualsAndHashCode(callSuper = true)
+public class SysUserPO extends FullAuditedPO {
 
     /**
      * 主键
@@ -154,38 +157,4 @@ public class SysUserPO {
      */
     private Long tenantId;
 
-    /**
-     * 删除者
-     */
-    private Long deleterId;
-
-    /**
-     * 是否删除
-     */
-    private boolean deleted;
-
-    /**
-     * 删除时间
-     */
-    private Instant deletionTime;
-
-    /**
-     * 最后修改者Id
-     */
-    private Long lastModifierId;
-
-    /**
-     * 最后修改时间
-     */
-    private Instant lastModificationTime;
-
-    /**
-     * 创建者Id
-     */
-    private Long creatorId;
-
-    /**
-     * 创建时间
-     */
-    private Instant creationTime;
 }

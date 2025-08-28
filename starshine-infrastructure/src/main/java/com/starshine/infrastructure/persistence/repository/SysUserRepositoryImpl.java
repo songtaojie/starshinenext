@@ -2,8 +2,10 @@ package com.starshine.infrastructure.persistence.repository;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.starshine.domain.model.user.SysUser;
+import com.starshine.infrastructure.persistence.converter.UserConverter;
 import com.starshine.infrastructure.persistence.mapper.SysUserMapper;
 import com.starshine.domain.repository.ISysUserRepository;
+import com.starshine.infrastructure.persistence.po.SysUserPO;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -17,9 +19,11 @@ import org.springframework.stereotype.Repository;
 public class SysUserRepositoryImpl implements ISysUserRepository {
 
     private final SysUserMapper sysUserMapper;
+    private final UserConverter userConverter;
 
-    public SysUserRepositoryImpl(SysUserMapper sysUserMapper) {
+    public SysUserRepositoryImpl(SysUserMapper sysUserMapper, UserConverter userConverter) {
         this.sysUserMapper = sysUserMapper;
+        this.userConverter = userConverter;
     }
 
     /**
@@ -30,7 +34,7 @@ public class SysUserRepositoryImpl implements ISysUserRepository {
      */
     @Override
     public SysUser findById(Long id) {
-        return sysUserMapper.selectById(id);
+        return userConverter.toDomain(sysUserMapper.selectById(id)) ;
     }
 
     /**
@@ -41,10 +45,10 @@ public class SysUserRepositoryImpl implements ISysUserRepository {
      */
     @Override
     public SysUser findByUsername(String username) {
-        return sysUserMapper.selectOne(
-                Wrappers.<SysUser>lambdaQuery()
-                        .eq(SysUser::getUsername, username)
-        );
+        var sysUserPO = sysUserMapper.selectOne(
+                Wrappers.<SysUserPO>lambdaQuery()
+                        .eq(SysUserPO::getUsername, username));
+        return userConverter.toDomain(sysUserPO);
     }
 
     /**
@@ -54,22 +58,25 @@ public class SysUserRepositoryImpl implements ISysUserRepository {
      */
     @Override
     public int updateUserProfile(SysUser sysUser) {
-        return sysUserMapper.updateById(sysUser);
+        var sysUserPO = userConverter.toPO(sysUser);
+        return sysUserMapper.updateById(sysUserPO);
     }
 
     @Override
     public int lock(SysUser sysUser) {
-        return sysUserMapper.update(sysUser, Wrappers.<SysUser>lambdaUpdate()
-                .eq(SysUser::getId, sysUser.getId())
-                .set(SysUser::getAccessFailedCount, sysUser.getAccessFailedCount())
+        var sysUserPO = userConverter.toPO(sysUser);
+        return sysUserMapper.update(sysUserPO, Wrappers.<SysUserPO>lambdaUpdate()
+                .eq(SysUserPO::getId, sysUser.getId())
+                .set(SysUserPO::getAccessFailedCount, sysUser.getAccessFailedCount())
                 );
     }
 
     @Override
     public int unLock(SysUser sysUser) {
-        return sysUserMapper.update(sysUser, Wrappers.<SysUser>lambdaUpdate()
-                .eq(SysUser::getId, sysUser.getId())
-                .set(SysUser::getAccessFailedCount, sysUser.getAccessFailedCount())
+        var sysUserPO = userConverter.toPO(sysUser);
+        return sysUserMapper.update(sysUserPO, Wrappers.<SysUserPO>lambdaUpdate()
+                .eq(SysUserPO::getId, sysUser.getId())
+                .set(SysUserPO::getAccessFailedCount, sysUser.getAccessFailedCount())
         );
     }
 }

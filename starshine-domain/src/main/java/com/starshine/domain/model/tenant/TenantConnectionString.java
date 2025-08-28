@@ -1,6 +1,6 @@
 package com.starshine.domain.model.tenant;
 
-import com.starshine.common.entities.Entity;
+import com.starshine.common.entities.BaseEntity;
 import com.starshine.common.entities.IMultiTenant;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +13,7 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
-public class TenantConnectionString extends Entity implements IMultiTenant {
+public class TenantConnectionString extends BaseEntity implements IMultiTenant {
 
     /**
      * 租户Id

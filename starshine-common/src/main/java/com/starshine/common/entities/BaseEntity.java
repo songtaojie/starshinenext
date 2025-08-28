@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @version 1.0
  * @since 2025-08-17 上午 11:58 周日
  */
-public abstract class Entity implements IEntity, Serializable {
+public abstract class BaseEntity implements IEntity, Serializable {
 
     @Override
     public String toString() {
@@ -19,5 +19,6 @@ public abstract class Entity implements IEntity, Serializable {
                         .map(Object::toString).toArray(String[]::new)));
     }
 
+    @Override
     public abstract Object[] getKeys();
 }

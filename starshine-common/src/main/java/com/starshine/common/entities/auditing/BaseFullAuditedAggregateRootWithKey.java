@@ -1,14 +1,19 @@
 package com.starshine.common.entities.auditing;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.time.Instant;
 
 /**
  * 创建者、修改者、删除者、审计信息聚合根
- * @param <TKey>
+ * @author songtaojie
+ * @version 1.0
+ * @since 2025-08-28 下午 周四
  */
 @Data
-public abstract class FullAuditedAggregateRootWithKey<TKey> extends AuditedAggregateRootWithKey<TKey> implements IFullAuditedWithKey<TKey> {
+@EqualsAndHashCode(callSuper = false)
+public abstract class BaseFullAuditedAggregateRootWithKey<TKey> extends BaseAuditedAggregateRootWithKey<TKey> implements IFullAuditedWithKey<TKey> {
     /**
      * 删除者
      */

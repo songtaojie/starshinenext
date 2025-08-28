@@ -1,6 +1,6 @@
 package com.starshine.domain.model.user;
 
-import com.starshine.common.entities.auditing.FullAuditedAggregateRootWithKey;
+import com.starshine.common.entities.auditing.BaseFullAuditedAggregateRootWithKey;
 import com.starshine.domain.interfaces.IUser;
 import lombok.Data;
 
@@ -12,7 +12,7 @@ import java.util.Map;
  * @author starshine
  */
 @Data
-public class SysUser extends FullAuditedAggregateRootWithKey<Long> implements IUser {
+public class SysUser extends BaseFullAuditedAggregateRootWithKey<Long> implements IUser {
     /**
      * 用户名
      */

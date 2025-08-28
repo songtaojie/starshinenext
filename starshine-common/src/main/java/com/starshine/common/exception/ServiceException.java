@@ -1,6 +1,7 @@
 package com.starshine.common.exception;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * 自定义业务异常
@@ -9,6 +10,7 @@ import lombok.Data;
  * @since 2025-08-23 下午 周六
  */
 @Data
+@EqualsAndHashCode(callSuper = false)
 public class ServiceException extends RuntimeException {
 
     /**

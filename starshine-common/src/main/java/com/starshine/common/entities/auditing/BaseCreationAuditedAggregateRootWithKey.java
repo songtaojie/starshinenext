@@ -1,7 +1,8 @@
 package com.starshine.common.entities.auditing;
 
-import com.starshine.common.entities.AggregateRootWithKey;
+import com.starshine.common.entities.BaseAggregateRootWithKey;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.time.Instant;
 
@@ -10,7 +11,8 @@ import java.time.Instant;
  * @param <TKey>
  */
 @Data
-public abstract class CreationAuditedAggregateRootWithKey<TKey> extends AggregateRootWithKey<TKey> implements ICreationAuditedWithKey<TKey> {
+@EqualsAndHashCode(callSuper = true)
+public abstract class BaseCreationAuditedAggregateRootWithKey<TKey> extends BaseAggregateRootWithKey<TKey> implements ICreationAuditedWithKey<TKey> {
     /**
      * 创建者Id
      */

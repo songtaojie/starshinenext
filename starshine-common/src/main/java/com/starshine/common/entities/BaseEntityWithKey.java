@@ -1,6 +1,7 @@
 package com.starshine.common.entities;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 
@@ -11,13 +12,14 @@ import java.io.Serializable;
  * @since 2025-08-17 下午 16:01 周日
  */
 @Data
-public abstract class EntityWithKey<TKey> extends Entity implements IEntityWithKey<TKey>, Serializable {
+@EqualsAndHashCode(callSuper = false)
+public abstract class BaseEntityWithKey<TKey> extends BaseEntity implements IEntityWithKey<TKey>, Serializable {
     protected TKey id;
 
-    protected EntityWithKey() {
+    protected BaseEntityWithKey() {
     }
 
-    protected EntityWithKey(TKey id) {
+    protected BaseEntityWithKey(TKey id) {
         this.id = id;
     }
 

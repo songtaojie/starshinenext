@@ -1,6 +1,6 @@
 package com.starshine.domain.model.tenant;
 
-import com.starshine.common.entities.BasicAggregateRootWithKey;
+import com.starshine.common.entities.BaseEntityWithKey;
 import lombok.Data;
 import  com.starshine.common.constant.CommonConstants;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  * @author starshine
  */
 @Data
-public class Tenant extends BasicAggregateRootWithKey<Long> {
+public class Tenant extends BaseEntityWithKey<Long> implements com.starshine.common.entities.IAggregateRootWithKey<Long> {
 
     /**
      * 租户名称
