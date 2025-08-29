@@ -42,11 +42,9 @@ public class SecurityConfig {
                         // 放行 Swagger 和 API 文档路径,其他请求需要认证
                         authorize.requestMatchers("/v3/api-docs", "/v3/api-docs/**",
                                         "/swagger-ui.html", "/swagger-ui/**",
-                                        "/webjars/**").permitAll()
+                                        "/webjars/**","/api/auth/login" ).permitAll()
                                 .anyRequest().authenticated())
-                .formLogin(formLogin ->
-                        formLogin.loginPage("/login")
-                                .permitAll())
+                .formLogin(formLogin -> formLogin.disable())
                 .csrf(csrf -> csrf.disable())
                 .rememberMe(Customizer.withDefaults())
                 .httpBasic(httpBasic ->httpBasic.disable());
