@@ -8,3 +8,5 @@ spring:
     url: jdbc:postgresql://localhost:5432/starshine_next_admin
     username: postgres
     password: stj123456
+starshine:
+  captcha-type: "math"

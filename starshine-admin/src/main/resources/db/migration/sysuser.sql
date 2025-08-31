@@ -50,11 +50,11 @@ CREATE TABLE public.sys_user
     -- 多租户 & 审计
     tenant_id                 BIGINT                            DEFAULT NULL,
     creator_id                BIGINT                            DEFAULT NULL,
-    creation_time              TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
+    creation_time             TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
     last_modifier_id          BIGINT                            DEFAULT NULL,
-    last_modification_time        TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
+    last_modification_time    TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
     deleter_id                BIGINT                            DEFAULT NULL,
-    deletion_time              TIMESTAMP WITH TIME ZONE          DEFAULT NULL,
+    deletion_time             TIMESTAMP WITH TIME ZONE          DEFAULT NULL,
     deleted                   BOOLEAN                  NOT NULL DEFAULT FALSE  -- 建议用 BOOLEAN 而非 BIT
 );
 
