@@ -1,4 +1,4 @@
-package com.starshine.application.infrastructure.config;
+package com.starshine.infrastructure.config;
 
 import com.google.code.kaptcha.text.impl.DefaultTextCreator;
 

@@ -1,4 +1,4 @@
-package com.starshine.application.infrastructure.security;
+package com.starshine.infrastructure.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.starshine.application.common.utils.StringUtils;

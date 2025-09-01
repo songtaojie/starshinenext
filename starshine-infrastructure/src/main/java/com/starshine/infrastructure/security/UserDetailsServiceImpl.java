@@ -1,4 +1,4 @@
-package com.starshine.application.infrastructure.security;
+package com.starshine.infrastructure.security;
 
 import com.starshine.application.common.exception.ServiceException;
 import com.starshine.application.domain.model.user.SysUser;

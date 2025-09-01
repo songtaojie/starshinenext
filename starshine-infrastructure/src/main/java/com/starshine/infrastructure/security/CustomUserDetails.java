@@ -1,4 +1,4 @@
-package com.starshine.application.infrastructure.security;
+package com.starshine.infrastructure.security;
 
 import com.starshine.application.domain.model.user.SysUser;
 import org.springframework.security.core.GrantedAuthority;
@@ -32,6 +32,41 @@ public class CustomUserDetails implements UserDetails {
     @Override
     public String getUsername() {
         return sysUser.getUsername();
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    /**
+     * 指定用户是否解锁,锁定的用户无法进行身份验证
+     *
+     * @return
+     */
+    @Override
+    public boolean isAccountNonLocked() {
+        return !sysUser.isLockoutEnabled();
+    }
+
+    /**
+     * 指定用户密码是否过期,过期的用户无法进行身份验证
+     *
+     * @return
+     */
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    /**
+     * 获取用户是否可用,禁用的用户无法进行身份验证
+     *
+     * @return
+     */
+    @Override
+    public boolean isEnabled() {
+        return !sysUser.isDeleted();
     }
 
     /**

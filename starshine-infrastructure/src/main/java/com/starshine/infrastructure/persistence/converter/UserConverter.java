@@ -1,9 +1,9 @@
-package com.starshine.application.infrastructure.persistence.converter;
+package com.starshine.infrastructure.persistence.converter;
 
 import com.starshine.application.domain.model.user.PhoneNumber;
 import com.starshine.application.domain.model.user.SysUser;
 import com.starshine.application.domain.model.user.Email;
-import com.starshine.application.infrastructure.persistence.po.SysUserPO;
+import com.starshine.infrastructure.persistence.po.SysUserPO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;

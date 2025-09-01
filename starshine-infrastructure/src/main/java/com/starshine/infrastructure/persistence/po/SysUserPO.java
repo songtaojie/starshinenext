@@ -1,9 +1,9 @@
-package com.starshine.application.infrastructure.persistence.po;
+package com.starshine.infrastructure.persistence.po;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.handlers.Fastjson2TypeHandler;
-import com.starshine.application.infrastructure.persistence.po.base.FullAuditedPO;
+import com.starshine.infrastructure.persistence.po.base.FullAuditedPO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.lang.Nullable;

@@ -1,4 +1,4 @@
-package com.starshine.application.infrastructure.persistence.po.base;
+package com.starshine.infrastructure.persistence.po.base;
 
 import com.starshine.application.common.entities.auditing.ICreationAuditedWithKey;
 import lombok.Data;

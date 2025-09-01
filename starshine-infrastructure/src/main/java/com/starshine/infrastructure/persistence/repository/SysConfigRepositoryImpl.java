@@ -1,13 +1,13 @@
-package com.starshine.application.infrastructure.persistence.repository;
+package com.starshine.infrastructure.persistence.repository;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.starshine.application.common.cache.RedisCache;
 import com.starshine.application.common.utils.StringUtils;
 import com.starshine.application.domain.model.config.SysConfig;
 import com.starshine.application.domain.repository.ISysConfigRepository;
-import com.starshine.application.infrastructure.persistence.converter.ConfigConverter;
-import com.starshine.application.infrastructure.persistence.mapper.SysConfigMapper;
-import com.starshine.application.infrastructure.persistence.po.SysConfigPO;
+import com.starshine.infrastructure.persistence.converter.ConfigConverter;
+import com.starshine.infrastructure.persistence.mapper.SysConfigMapper;
+import com.starshine.infrastructure.persistence.po.SysConfigPO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.starshine.application.infrastructure.security;
+package com.starshine.infrastructure.security;
 
 import com.starshine.application.common.utils.StringUtils;
 import com.starshine.application.domain.repository.ISysUserRepository;

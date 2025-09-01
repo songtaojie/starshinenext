@@ -1,7 +1,7 @@
-package com.starshine.application.infrastructure.persistence.mapper;
+package com.starshine.infrastructure.persistence.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.starshine.application.infrastructure.persistence.po.SysConfigPO;
+import com.starshine.infrastructure.persistence.po.SysConfigPO;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

@@ -1,7 +1,7 @@
-package com.starshine.application.infrastructure.persistence.converter;
+package com.starshine.infrastructure.persistence.converter;
 
 import com.starshine.application.domain.model.config.SysConfig;
-import com.starshine.application.infrastructure.persistence.po.SysConfigPO;
+import com.starshine.infrastructure.persistence.po.SysConfigPO;
 import org.mapstruct.Mapper;
 
 /**

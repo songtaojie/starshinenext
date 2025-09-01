@@ -1,11 +1,11 @@
-package com.starshine.application.infrastructure.persistence.repository;
+package com.starshine.infrastructure.persistence.repository;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.starshine.application.domain.model.user.SysUser;
-import com.starshine.application.infrastructure.persistence.converter.UserConverter;
-import com.starshine.application.infrastructure.persistence.mapper.SysUserMapper;
+import com.starshine.infrastructure.persistence.converter.UserConverter;
+import com.starshine.infrastructure.persistence.mapper.SysUserMapper;
 import com.starshine.application.domain.repository.ISysUserRepository;
-import com.starshine.application.infrastructure.persistence.po.SysUserPO;
+import com.starshine.infrastructure.persistence.po.SysUserPO;
 import org.springframework.stereotype.Repository;
 
 /**

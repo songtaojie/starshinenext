@@ -1,7 +1,7 @@
-package com.starshine.application.infrastructure.persistence.po;
+package com.starshine.infrastructure.persistence.po;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.starshine.application.infrastructure.persistence.po.base.AuditedPO;
+import com.starshine.infrastructure.persistence.po.base.AuditedPO;
 import lombok.Data;
 
 /**

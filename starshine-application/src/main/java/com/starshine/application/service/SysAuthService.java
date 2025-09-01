@@ -10,6 +10,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 /**
@@ -25,7 +26,7 @@ public class SysAuthService {
     private final SysUserService sysUserService;
     private final SysConfigService sysConfigService;
     private final RedisCache redisCache;
-    public void login(LoginRequest loginRequest){
+    public String login(LoginRequest loginRequest){
         // 验证码验证
         validateCaptcha(loginRequest);
         Authentication authentication = null;
@@ -42,7 +43,9 @@ public class SysAuthService {
         finally {
             AuthenticationContextHolder.clear();
         }
-        var sysUser = (CustomUserDetails) authentication.getPrincipal();
+        var userDetails = (CustomUserDetails) authentication.getPrincipal();
+        var token = "";
+        return token;
     }
 
     private void validateCaptcha(LoginRequest loginRequest) {
