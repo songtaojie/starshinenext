@@ -94,6 +94,7 @@
         <module>starshine-domain</module>
         <module>starshine-application</module>
         <module>starshine-codegen</module>
+        <module>starshine-shared</module>
     </modules>
     <packaging>pom</packaging>
     <dependencies>

@@ -1,6 +1,6 @@
 package com.starshine.infrastructure.persistence.po.base;
 
-import com.starshine.application.common.entities.auditing.ICreationAuditedWithKey;
+import com.starshine.common.entities.auditing.ICreationAuditedWithKey;
 import lombok.Data;
 
 import java.time.Instant;

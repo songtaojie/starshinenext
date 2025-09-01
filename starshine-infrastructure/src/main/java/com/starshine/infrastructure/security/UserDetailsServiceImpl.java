@@ -1,9 +1,9 @@
 package com.starshine.infrastructure.security;
 
-import com.starshine.application.common.exception.ServiceException;
-import com.starshine.application.domain.model.user.SysUser;
-import com.starshine.application.domain.enums.UserStatus;
-import com.starshine.application.domain.repository.ISysUserRepository;
+import com.starshine.domain.model.user.SysUser;
+import com.starshine.domain.enums.UserStatus;
+import com.starshine.domain.repository.ISysUserRepository;
+import com.starshine.shared.exception.ServiceException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.core.userdetails.UserDetails;

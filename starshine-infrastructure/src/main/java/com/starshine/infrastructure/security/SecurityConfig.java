@@ -1,5 +1,6 @@
 package com.starshine.infrastructure.security;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,12 +23,13 @@ import org.springframework.security.web.SecurityFilterChain;
  */
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class SecurityConfig {
 
     private final UserDetailsService userDetailsService;
-    public SecurityConfig(UserDetailsService userDetailsService) {
-        this.userDetailsService = userDetailsService;
-    }
+    private final JwtAuthenticationSuccessHandler jwtAuthenticationSuccessHandler;
+    private final JwtAuthenticationFailureHandler jwtAuthenticationFailureHandler;
+    private final UnauthorizedHandler unauthorizedHandler;
     @Bean
     public AuthenticationManager authenticationManager() {
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider(userDetailsService);
@@ -45,7 +47,10 @@ public class SecurityConfig {
                                         "/swagger-ui.html", "/swagger-ui/**",
                                         "/webjars/**","/api/auth/login","/captcha" ).permitAll()
                                 .anyRequest().authenticated())
-                .formLogin(AbstractHttpConfigurer::disable)
+                .formLogin(formLogin  ->
+                        formLogin.successHandler(jwtAuthenticationSuccessHandler)
+                        .failureHandler(jwtAuthenticationFailureHandler)
+                )
                 .csrf(AbstractHttpConfigurer::disable)
                 .rememberMe(Customizer.withDefaults())
                 .httpBasic(AbstractHttpConfigurer::disable);

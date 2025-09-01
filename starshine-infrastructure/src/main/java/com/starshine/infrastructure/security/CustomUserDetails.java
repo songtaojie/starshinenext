@@ -1,6 +1,8 @@
 package com.starshine.infrastructure.security;
 
-import com.starshine.application.domain.model.user.SysUser;
+import com.starshine.domain.model.user.SysUser;
+import com.starshine.shared.security.AuthenticatedUser;
+import com.starshine.shared.security.LoginUser;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -13,7 +15,7 @@ import java.util.List;
  * @version 1.0
  * @since 2025-08-29 下午 周五
  */
-public class CustomUserDetails implements UserDetails {
+public class CustomUserDetails implements UserDetails, AuthenticatedUser {
     private final SysUser sysUser;
 
     public CustomUserDetails(SysUser sysUser) {
@@ -77,4 +79,9 @@ public class CustomUserDetails implements UserDetails {
         return sysUser;
     }
 
+    @Override
+    public LoginUser getLoginUser() {
+        return new LoginUser(sysUser.getId(), sysUser.getUsername(), sysUser.getName(),sysUser.getTenantId(),
+                sysUser.getStatus(),sysUser.isLockoutEnabled(),sysUser.isDeleted(),null,null);
+    }
 }

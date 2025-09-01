@@ -1,6 +1,6 @@
 package com.starshine.infrastructure.persistence.po.base;
 
-import com.starshine.application.common.entities.auditing.IFullAuditedWithKey;
+import com.starshine.common.entities.auditing.IFullAuditedWithKey;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>com.starshine</groupId>
-            <artifactId>starshine-common</artifactId>
+            <artifactId>starshine-shared</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
