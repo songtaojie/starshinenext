@@ -4,7 +4,7 @@ import com.starshine.common.cache.RedisCache;
 import com.starshine.common.constant.CacheConstants;
 import com.starshine.common.utils.ConvertUtils;
 import com.starshine.common.utils.StringUtils;
-import com.starshine.domain.repository.ISysConfigRepository;
+import com.starshine.domain.config.ISysConfigRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

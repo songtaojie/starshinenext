@@ -1,4 +1,4 @@
-package com.starshine.domain.model.user;
+package com.starshine.domain.user;
 
 
 import lombok.AllArgsConstructor;

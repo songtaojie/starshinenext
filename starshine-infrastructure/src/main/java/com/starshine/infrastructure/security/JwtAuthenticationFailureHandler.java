@@ -3,7 +3,7 @@ package com.starshine.infrastructure.security;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.starshine.common.utils.StringUtils;
 import com.starshine.common.web.RESTfulResult;
-import com.starshine.domain.repository.ISysUserRepository;
+import com.starshine.domain.user.IUserRepository;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -31,9 +31,9 @@ public class JwtAuthenticationFailureHandler implements AuthenticationFailureHan
      */
     private final long LOCKOUT_TIME = 15 * 60;
 
-    private final ISysUserRepository sysUserRepository;
+    private final IUserRepository sysUserRepository;
     private final ObjectMapper objectMapper;
-    public JwtAuthenticationFailureHandler(ISysUserRepository sysUserRepository,
+    public JwtAuthenticationFailureHandler(IUserRepository sysUserRepository,
                                            ObjectMapper objectMapper) {
         this.sysUserRepository = sysUserRepository;
         this.objectMapper = objectMapper;

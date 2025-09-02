@@ -1,7 +1,7 @@
 package com.starshine.application.service;
 
-import com.starshine.domain.model.user.SysUser;
-import com.starshine.domain.repository.ISysUserRepository;
+import com.starshine.domain.user.User;
+import com.starshine.domain.user.IUserRepository;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,12 +14,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class SysUserService {
 
-    private final ISysUserRepository sysUserRepository;
+    private final IUserRepository sysUserRepository;
     /**
      * 构造函数
      * @param sysUserRepository 系统用户仓库
      */
-    public SysUserService(ISysUserRepository sysUserRepository) {
+    public SysUserService(IUserRepository sysUserRepository) {
         this.sysUserRepository = sysUserRepository;
     }
 
@@ -28,7 +28,7 @@ public class SysUserService {
      * @param id 用户id
      * @return 用户
      */
-    public SysUser findById(Long id) {
+    public User findById(Long id) {
         return sysUserRepository.findById(id);
     }
 
@@ -37,7 +37,7 @@ public class SysUserService {
      * @param username 用户名
      * @return 用户
      */
-    public SysUser findByUsername(String username) {
+    public User findByUsername(String username) {
         return sysUserRepository.findByUsername(username);
     }
 }

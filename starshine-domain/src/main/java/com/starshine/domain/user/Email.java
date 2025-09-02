@@ -1,4 +1,4 @@
-package com.starshine.domain.model.user;
+package com.starshine.domain.user;
 
 import com.starshine.common.utils.StringUtils;
 import lombok.AccessLevel;

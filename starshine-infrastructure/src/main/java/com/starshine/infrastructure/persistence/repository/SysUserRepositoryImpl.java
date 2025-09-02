@@ -1,10 +1,10 @@
 package com.starshine.infrastructure.persistence.repository;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.starshine.domain.model.user.SysUser;
+import com.starshine.domain.user.User;
 import com.starshine.infrastructure.persistence.converter.UserConverter;
 import com.starshine.infrastructure.persistence.mapper.SysUserMapper;
-import com.starshine.domain.repository.ISysUserRepository;
+import com.starshine.domain.user.IUserRepository;
 import com.starshine.infrastructure.persistence.po.SysUserPO;
 import org.springframework.stereotype.Repository;
 
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 // @RequiredArgsConstructor
-public class SysUserRepositoryImpl implements ISysUserRepository {
+public class SysUserRepositoryImpl implements IUserRepository {
 
     private final SysUserMapper sysUserMapper;
     private final UserConverter userConverter;
@@ -33,7 +33,7 @@ public class SysUserRepositoryImpl implements ISysUserRepository {
      * @since 2025-08-17 下午 23:10 周日
      */
     @Override
-    public SysUser findById(Long id) {
+    public User findById(Long id) {
         return userConverter.toDomain(sysUserMapper.selectById(id)) ;
     }
 
@@ -44,7 +44,7 @@ public class SysUserRepositoryImpl implements ISysUserRepository {
      * @since 2025-08-23 下午 周六
      */
     @Override
-    public SysUser findByUsername(String username) {
+    public User findByUsername(String username) {
         var sysUserPO = sysUserMapper.selectOne(
                 Wrappers.<SysUserPO>lambdaQuery()
                         .eq(SysUserPO::getUsername, username));
@@ -57,13 +57,13 @@ public class SysUserRepositoryImpl implements ISysUserRepository {
      * @return
      */
     @Override
-    public int updateUserProfile(SysUser sysUser) {
+    public int updateUserProfile(User sysUser) {
         var sysUserPO = userConverter.toPO(sysUser);
         return sysUserMapper.updateById(sysUserPO);
     }
 
     @Override
-    public int lock(SysUser sysUser) {
+    public int lock(User sysUser) {
         var sysUserPO = userConverter.toPO(sysUser);
         return sysUserMapper.update(sysUserPO, Wrappers.<SysUserPO>lambdaUpdate()
                 .eq(SysUserPO::getId, sysUser.getId())
@@ -72,7 +72,7 @@ public class SysUserRepositoryImpl implements ISysUserRepository {
     }
 
     @Override
-    public int unLock(SysUser sysUser) {
+    public int unLock(User sysUser) {
         var sysUserPO = userConverter.toPO(sysUser);
         return sysUserMapper.update(sysUserPO, Wrappers.<SysUserPO>lambdaUpdate()
                 .eq(SysUserPO::getId, sysUser.getId())

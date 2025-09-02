@@ -1,4 +1,4 @@
-package com.starshine.domain.model.tenant;
+package com.starshine.domain.tenant;
 
 import com.starshine.common.entities.IAggregateRootWithKey;
 import com.starshine.common.entities.BaseEntityWithKey;

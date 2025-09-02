@@ -3,8 +3,8 @@ package com.starshine.domain.interfaces;
 import com.starshine.common.data.IHasExtraInfo;
 import com.starshine.common.entities.IAggregateRoot;
 import com.starshine.common.entities.IMultiTenant;
-import com.starshine.domain.model.user.Email;
-import com.starshine.domain.model.user.PhoneNumber;
+import com.starshine.domain.user.Email;
+import com.starshine.domain.user.PhoneNumber;
 
 /**
  * 用户接口

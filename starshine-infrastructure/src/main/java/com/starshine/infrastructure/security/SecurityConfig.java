@@ -48,9 +48,13 @@ public class SecurityConfig {
                                         "/webjars/**","/api/auth/login","/captcha" ).permitAll()
                                 .anyRequest().authenticated())
                 .formLogin(formLogin  ->
-                        formLogin.successHandler(jwtAuthenticationSuccessHandler)
+                        formLogin
+                        .loginProcessingUrl("/api/auth/login")
+                        .successHandler(jwtAuthenticationSuccessHandler)
                         .failureHandler(jwtAuthenticationFailureHandler)
                 )
+                .exceptionHandling(exceptionHandling ->
+                        exceptionHandling.authenticationEntryPoint(unauthorizedHandler))
                 .csrf(AbstractHttpConfigurer::disable)
                 .rememberMe(Customizer.withDefaults())
                 .httpBasic(AbstractHttpConfigurer::disable);

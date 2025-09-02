@@ -1,8 +1,8 @@
 package com.starshine.infrastructure.persistence.converter;
 
-import com.starshine.domain.model.user.PhoneNumber;
-import com.starshine.domain.model.user.SysUser;
-import com.starshine.domain.model.user.Email;
+import com.starshine.domain.user.PhoneNumber;
+import com.starshine.domain.user.User;
+import com.starshine.domain.user.Email;
 import com.starshine.infrastructure.persistence.po.SysUserPO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -22,7 +22,7 @@ public interface UserConverter {
         @Mapping(target = "email",source = ".", qualifiedByName = "toEmail"),
         @Mapping(target = "phoneNumber",source = ".", qualifiedByName = "toPhoneNumber")
     })
-    SysUser toDomain(SysUserPO po);
+    User toDomain(SysUserPO po);
 
     /**
      * 转换邮箱
@@ -50,5 +50,5 @@ public interface UserConverter {
             @Mapping(source = "phoneNumber.number", target = "phoneNumber"),
             @Mapping(source = "phoneNumber.confirmed", target = "phoneNumberConfirmed"),
     })
-    SysUserPO toPO(SysUser domain);
+    SysUserPO toPO(User domain);
 }

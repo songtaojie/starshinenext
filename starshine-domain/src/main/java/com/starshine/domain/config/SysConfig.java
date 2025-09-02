@@ -1,4 +1,4 @@
-package com.starshine.domain.model.config;
+package com.starshine.domain.config;
 
 import com.starshine.common.entities.auditing.BaseAuditedAggregateRoot;
 import lombok.Data;

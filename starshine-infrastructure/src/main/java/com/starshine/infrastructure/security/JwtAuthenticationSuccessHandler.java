@@ -1,7 +1,7 @@
 package com.starshine.infrastructure.security;
 
 import com.starshine.common.utils.StringUtils;
-import com.starshine.domain.repository.ISysUserRepository;
+import com.starshine.domain.user.IUserRepository;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -20,8 +20,8 @@ import java.io.IOException;
 @Component
 public class JwtAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
-    private final ISysUserRepository sysUserRepository;
-    public JwtAuthenticationSuccessHandler(ISysUserRepository sysUserRepository){
+    private final IUserRepository sysUserRepository;
+    public JwtAuthenticationSuccessHandler(IUserRepository sysUserRepository){
         this.sysUserRepository = sysUserRepository;
     }
     @Override

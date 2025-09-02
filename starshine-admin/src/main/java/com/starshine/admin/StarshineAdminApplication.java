@@ -1,4 +1,4 @@
-package com.starshine.application;
+package com.starshine.admin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

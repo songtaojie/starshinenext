@@ -1,8 +1,8 @@
 package com.starshine.infrastructure.security;
 
-import com.starshine.domain.model.user.SysUser;
+import com.starshine.domain.user.User;
 import com.starshine.domain.enums.UserStatus;
-import com.starshine.domain.repository.ISysUserRepository;
+import com.starshine.domain.user.IUserRepository;
 import com.starshine.shared.exception.ServiceException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.DisabledException;
@@ -20,15 +20,15 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 public class UserDetailsServiceImpl implements UserDetailsService {
-    private final ISysUserRepository sysUserRepository;
+    private final IUserRepository sysUserRepository;
 
-    public UserDetailsServiceImpl(ISysUserRepository sysUserRepository) {
+    public UserDetailsServiceImpl(IUserRepository sysUserRepository) {
         this.sysUserRepository = sysUserRepository;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws ServiceException {
-        SysUser sysUser = sysUserRepository.findByUsername(username);
+        User sysUser = sysUserRepository.findByUsername(username);
         if (sysUser == null) {
             log.info("登录用户：{}不存在", username);
             throw new UsernameNotFoundException("登录用户：" + username + "不存在");

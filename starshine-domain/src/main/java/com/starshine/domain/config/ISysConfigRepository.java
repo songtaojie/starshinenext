@@ -1,6 +1,4 @@
-package com.starshine.domain.repository;
-
-import com.starshine.domain.model.config.SysConfig;
+package com.starshine.domain.config;
 
 /**
  * 系统配置仓储

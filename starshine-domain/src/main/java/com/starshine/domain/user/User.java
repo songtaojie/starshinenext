@@ -1,4 +1,4 @@
-package com.starshine.domain.model.user;
+package com.starshine.domain.user;
 
 import com.starshine.common.entities.auditing.BaseFullAuditedAggregateRootWithKey;
 import com.starshine.domain.interfaces.IUser;
@@ -12,7 +12,7 @@ import java.util.Map;
  * @author starshine
  */
 @Data
-public class SysUser extends BaseFullAuditedAggregateRootWithKey<Long> implements IUser {
+public class User extends BaseFullAuditedAggregateRootWithKey<Long> implements IUser {
     /**
      * 用户名
      */
