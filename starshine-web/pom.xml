@@ -8,9 +8,9 @@
 		<version>0.0.1-SNAPSHOT</version>
 <!--		<relativePath/>-->
 	</parent>
-	<artifactId>starshine-admin</artifactId>
-	<name>starshine-admin</name>
-	<description>starshine-admin</description>
+	<artifactId>starshine-web</artifactId>
+	<name>starshine-web</name>
+	<description>starshine-web</description>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

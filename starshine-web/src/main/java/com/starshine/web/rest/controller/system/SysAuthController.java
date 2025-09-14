@@ -2,7 +2,7 @@ package com.starshine.application.web.controller.system;
 
 import com.starshine.common.security.AuthenticationContextHolder;
 import com.starshine.common.web.BaseController;
-import com.starshine.common.web.RESTfulResult;
+import com.starshine.common.web.RestfulResult;
 import com.starshine.application.models.LoginRequest;
 import com.starshine.application.service.SysConfigService;
 import com.starshine.application.service.SysUserService;
@@ -29,7 +29,7 @@ public class SysAuthController extends BaseController {
     private final AuthenticationManager authenticationManager;
     private final SysConfigService sysConfigService;
     @PostMapping("/login")
-    public RESTfulResult login(@RequestBody LoginRequest loginRequest) {
+    public RestfulResult login(@RequestBody LoginRequest loginRequest) {
         Authentication authentication = null;
         log.info("用户登录：{}", loginRequest);
         try {
@@ -38,12 +38,12 @@ public class SysAuthController extends BaseController {
             authentication = authenticationManager.authenticate(authenticationToken);
         }
         catch (Exception e) {
-            return RESTfulResult.error("用户名或密码错误");
+            return RestfulResult.error("用户名或密码错误");
         }
         finally {
             AuthenticationContextHolder.clear();
         }
-        return RESTfulResult.ok("登录成功", sysUserService.findByUsername(loginRequest.username()));
+        return RestfulResult.ok("登录成功", sysUserService.findByUsername(loginRequest.username()));
     }
 }
 

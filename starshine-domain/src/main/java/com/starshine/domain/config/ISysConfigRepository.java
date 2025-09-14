@@ -1,5 +1,7 @@
 package com.starshine.domain.config;
 
+import org.springframework.lang.Nullable;
+
 /**
  * 系统配置仓储
  * @author songtaojie
@@ -12,5 +14,6 @@ public interface ISysConfigRepository {
      * @param code
      * @return
      */
+    @Nullable
     SysConfig findByCode(String code);
 }

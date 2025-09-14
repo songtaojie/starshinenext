@@ -88,7 +88,7 @@
     </dependencyManagement>
 
     <modules>
-        <module>starshine-admin</module>
+        <module>starshine-web</module>
         <module>starshine-common</module>
         <module>starshine-infrastructure</module>
         <module>starshine-domain</module>

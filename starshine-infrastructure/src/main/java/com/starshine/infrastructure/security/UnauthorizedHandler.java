@@ -1,7 +1,8 @@
 package com.starshine.infrastructure.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.starshine.common.web.RESTfulResult;
+import com.starshine.common.web.RestfulResult;
+import com.starshine.shared.exception.BizErrorCode;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -27,7 +28,7 @@ public class UnauthorizedHandler implements AuthenticationEntryPoint {
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException)
             throws IOException, ServletException {
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-        RESTfulResult resTfulResult = RESTfulResult.error("未登录或 Token 已过期");
+        RestfulResult resTfulResult = RestfulResult.error(BizErrorCode.UNAUTHORIZED.getCode(), "未登录或 Token 已过期");
         objectMapper.writeValue(response.getOutputStream(), resTfulResult);
     }
 }

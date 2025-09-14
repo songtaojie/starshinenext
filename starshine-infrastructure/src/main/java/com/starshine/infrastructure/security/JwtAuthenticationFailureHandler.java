@@ -2,7 +2,7 @@ package com.starshine.infrastructure.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.starshine.common.utils.StringUtils;
-import com.starshine.common.web.RESTfulResult;
+import com.starshine.common.web.RestfulResult;
 import com.starshine.domain.user.IUserRepository;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -56,7 +56,7 @@ public class JwtAuthenticationFailureHandler implements AuthenticationFailureHan
                 sysUserRepository.lock(sysUser);
             }
         }
-        var result = new RESTfulResult(HttpStatus.UNAUTHORIZED, errorMessage);
+        var result = new RestfulResult(HttpStatus.UNAUTHORIZED, errorMessage);
         objectMapper.writeValue(response.getOutputStream(), result);
     }
 }

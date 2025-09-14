@@ -7,7 +7,7 @@ import com.starshine.common.constant.CacheConstants;
 import com.starshine.common.constant.CommonConstants;
 import com.starshine.common.constant.ConfigConstants;
 import com.starshine.common.utils.CommonUtils;
-import com.starshine.common.web.RESTfulResult;
+import com.starshine.common.web.RestfulResult;
 import com.starshine.application.service.SysConfigService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -40,8 +40,8 @@ public class CaptchaController {
     private final StarshineConfig starshineConfig;
 
     @GetMapping("/captcha")
-    public RESTfulResult getCaptcha() {
-        RESTfulResult result = RESTfulResult.ok();
+    public RestfulResult getCaptcha() {
+        RestfulResult result = RestfulResult.ok();
         boolean captchaEnabled = sysConfigService.getConfigValue(ConfigConstants.SYS_CAPTCHA, Boolean.class);
         result.put("captchaEnabled", captchaEnabled);
         if (!captchaEnabled) {
@@ -68,7 +68,7 @@ public class CaptchaController {
         try {
             ImageIO.write(bufferedImage, "jpg", outputStream);
         }catch (Exception e){
-            return RESTfulResult.error(e.getMessage());
+            return RestfulResult.error(e.getMessage());
         }
         // ✅ 将字节数组转为 Base64 编码字符串
         String base64Image = Base64.getEncoder().encodeToString(outputStream.toByteArray());
