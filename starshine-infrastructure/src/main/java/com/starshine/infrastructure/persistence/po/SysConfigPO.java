@@ -1,6 +1,8 @@
 package com.starshine.infrastructure.persistence.po;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.starshine.domain.enums.ConfigType;
+import com.starshine.domain.enums.StatusEnum;
 import com.starshine.infrastructure.persistence.po.base.AuditedPO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -31,12 +33,12 @@ public class SysConfigPO extends AuditedPO {
      * 配置类型
      * 1:系统配置 2:租户配置
      */
-    private String configType;
+    private ConfigType configType;
 
     /**
      * 配置分组
      */
-    private String groupCode;
+    private String group;
 
     /**
      * 配置描述
@@ -51,5 +53,5 @@ public class SysConfigPO extends AuditedPO {
     /**
      * 是否启用
      */
-    private boolean active;
+    private StatusEnum status;
 }

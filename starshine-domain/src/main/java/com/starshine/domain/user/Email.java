@@ -15,6 +15,11 @@ import lombok.Value;
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public class Email {
     private final String address;
+    /**
+     * -- GETTER --
+     * 获取Email是否已确认
+     * @return
+     */
     private final boolean confirmed;
 
     /**
@@ -23,12 +28,12 @@ public class Email {
      * @param confirmed
      * @return
      */
-    public static Email of(String address, boolean confirmed){
+    public static Email of(String address, boolean confirmed) {
         return new Email(validateAndNormalize(address), confirmed);
     }
 
-    private static String validateAndNormalize(String address){
-        if(StringUtils.isEmpty( address)){
+    private static String validateAndNormalize(String address) {
+        if (StringUtils.isEmpty(address)) {
             throw new IllegalArgumentException("Email address cannot be null or empty");
         }
         if (!address.matches("^[\\w.-]+@([\\w-]+\\.)+[\\w-]{2,}$")) {
@@ -37,26 +42,18 @@ public class Email {
         return address.trim().toLowerCase();
     }
 
-    public Email confirm(){
-        if(confirmed){
+    public Email confirm() {
+        if (confirmed) {
             return this;
         }
         return new Email(address, true);
     }
 
-    public Email unconfirm(){
-        if(!confirmed){
+    public Email unconfirm() {
+        if (!confirmed) {
             return this;
         }
         return new Email(address, false);
-    }
-
-    /**
-     * 获取Email是否已确认
-     * @return
-     */
-    public boolean isConfirmed(){
-        return confirmed;
     }
 
     @Override

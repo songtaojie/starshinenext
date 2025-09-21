@@ -56,7 +56,7 @@ public class JwtAuthenticationFailureHandler implements AuthenticationFailureHan
                 sysUserRepository.lock(sysUser);
             }
         }
-        var result = new RestfulResult(HttpStatus.UNAUTHORIZED, errorMessage);
+        var result = RestfulResult.error(HttpStatus.UNAUTHORIZED.value(),errorMessage);
         objectMapper.writeValue(response.getOutputStream(), result);
     }
 }

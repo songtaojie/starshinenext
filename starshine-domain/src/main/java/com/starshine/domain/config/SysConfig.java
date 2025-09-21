@@ -1,6 +1,8 @@
 package com.starshine.domain.config;
 
 import com.starshine.common.entities.auditing.BaseAuditedAggregateRoot;
+import com.starshine.domain.enums.ConfigType;
+import com.starshine.domain.enums.StatusEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -32,12 +34,12 @@ public class SysConfig extends BaseAuditedAggregateRoot {
      * 配置类型
      * 1:系统配置 2:租户配置
      */
-    private String configType;
+    private ConfigType configType;
 
     /**
      * 配置分组
      */
-    private String groupCode;
+    private String group;
 
     /**
      * 配置描述
@@ -52,5 +54,5 @@ public class SysConfig extends BaseAuditedAggregateRoot {
     /**
      * 是否启用
      */
-    private boolean active;
+    private StatusEnum status;
 }

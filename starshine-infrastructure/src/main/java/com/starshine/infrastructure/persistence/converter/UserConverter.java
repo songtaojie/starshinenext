@@ -47,6 +47,7 @@ public interface UserConverter {
     @Mappings({
             @Mapping(source = "email.address", target = "email"),
             @Mapping(source = "email.confirmed", target = "emailConfirmed"),
+            @Mapping(source = "email.address", target = "normalizedEmail"),
             @Mapping(source = "phoneNumber.number", target = "phoneNumber"),
             @Mapping(source = "phoneNumber.confirmed", target = "phoneNumberConfirmed"),
     })

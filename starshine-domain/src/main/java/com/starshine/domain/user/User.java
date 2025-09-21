@@ -3,6 +3,7 @@ package com.starshine.domain.user;
 import com.starshine.common.entities.auditing.BaseFullAuditedAggregateRootWithKey;
 import com.starshine.domain.interfaces.IUser;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.time.Instant;
 import java.util.Map;
@@ -12,6 +13,7 @@ import java.util.Map;
  * @author starshine
  */
 @Data
+@EqualsAndHashCode(callSuper=false)
 public class User extends BaseFullAuditedAggregateRootWithKey<Long> implements IUser {
     /**
      * 用户名

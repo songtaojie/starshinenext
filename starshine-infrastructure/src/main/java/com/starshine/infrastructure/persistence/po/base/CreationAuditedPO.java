@@ -1,7 +1,10 @@
 package com.starshine.infrastructure.persistence.po.base;
 
+import com.starshine.common.entities.BaseEntityWithKey;
+import com.starshine.common.entities.IEntityWithKey;
 import com.starshine.common.entities.auditing.ICreationAuditedWithKey;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.time.Instant;
 /**
@@ -11,7 +14,8 @@ import java.time.Instant;
  * @since 2025-08-28 下午 周四
  */
 @Data
-public abstract class CreationAuditedPO implements ICreationAuditedWithKey<Long> {
+@EqualsAndHashCode(callSuper = false)
+public abstract class CreationAuditedPO extends BaseEntityWithKey<Long> implements ICreationAuditedWithKey<Long> {
     /**
      * 创建者Id
      */

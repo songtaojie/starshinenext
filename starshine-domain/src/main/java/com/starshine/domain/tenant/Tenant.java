@@ -4,6 +4,8 @@ import com.starshine.common.entities.IAggregateRootWithKey;
 import com.starshine.common.entities.BaseEntityWithKey;
 import com.starshine.shared.constant.CommonConstants;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.util.List;
 
 /**
@@ -11,6 +13,7 @@ import java.util.List;
  * @author starshine
  */
 @Data
+@EqualsAndHashCode(callSuper=false)
 public class Tenant extends BaseEntityWithKey<Long> implements IAggregateRootWithKey<Long> {
 
     /**
